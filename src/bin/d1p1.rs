@@ -5,8 +5,7 @@ fn main() {
         .lines()
         .map(|line| {
             let nums = line
-                .split(' ')
-                .filter(|s| !s.is_empty())
+                .split_whitespace()
                 .map(|s| s.parse::<i32>().unwrap())
                 .collect::<Vec<i32>>();
             (*nums.first().unwrap(), *nums.last().unwrap())
